@@ -1,0 +1,15 @@
+StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+
+StackTraceElement stackTraceElement2 = stackTrace[2];
+String className2 = stackTraceElement2.getClassName();
+String methodName2 = stackTraceElement2.getMethodName();
+String[] split2 = className2.split("\\.");
+className2 = split2[split2.length - 1];
+
+StackTraceElement stackTraceElement1 = stackTrace[1];
+String className1 = stackTraceElement1.getClassName();
+String methodName1 = stackTraceElement1.getMethodName();
+String[] split1 = className1.split("\\.");
+className1 = split1[split1.length - 1];
+
+me.banfan.model.ParserStack.get().pop();

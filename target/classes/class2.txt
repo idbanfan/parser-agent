@@ -1,0 +1,13 @@
+java.util.List<StackTraceElement> stackTrace = java.util.Arrays
+        .stream(Thread.currentThread().getStackTrace())
+        .filter(o -> o.getClassName().startsWith("com.example.parserstructuregraphaop.utils"))
+        .collect(java.util.stream.Collectors.toList());
+java.util.Collections.reverse(stackTrace);
+for (StackTraceElement stackTraceElement : stackTrace) {
+    String className = stackTraceElement.getClassName();
+    String[] split = className.split("\\.");
+    String methodName = stackTraceElement.getMethodName();
+    String methodName2 = split[split.length - 1];
+    System.out.print(methodName2 + "." + methodName + " -> ");
+}
+System.out.println();

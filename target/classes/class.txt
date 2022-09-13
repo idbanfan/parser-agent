@@ -1,0 +1,8 @@
+for (StackTraceElement stackTraceElement : Thread.currentThread().getStackTrace()) {
+    String className = stackTraceElement.getClassName();
+    String[] split = className.split("\\.");
+    String methodName = stackTraceElement.getMethodName();
+    String methodName2 = split[split.length - 1];
+    System.out.print(methodName2 + "." + methodName + " -> ");
+}
+System.out.println();
